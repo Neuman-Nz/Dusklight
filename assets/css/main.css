@@ -1550,7 +1550,9 @@ section,
   margin-bottom: 0;
   font-size: 14px;
 }
-
+.col-lg-7{
+  color: #060606;
+}
 .contact .php-email-form {
   height: 100%;
 }
