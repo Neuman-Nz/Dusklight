@@ -772,7 +772,7 @@ section,
   align-self: flex-start;
   flex-shrink: 0;
   border: 2px solid var(--accent-color);
-  background-color: #413945;
+  background-color: #9b42c7;
 }
 
 .hero .btn-get-started:hover {
@@ -841,15 +841,15 @@ section,
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .clients .client-logo img {
   padding: 20px 40px;
   max-width: 90%;
   transition: 0.3s;
-  opacity: 0.5;
-  filter: grayscale(100);
+  /* opacity: 0.5; */
+  /* filter: grayscale(100); */
 }
 
 .clients .client-logo img:hover {
