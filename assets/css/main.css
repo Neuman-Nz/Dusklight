@@ -772,6 +772,7 @@ section,
   align-self: flex-start;
   flex-shrink: 0;
   border: 2px solid var(--accent-color);
+  background-color: #413945;
 }
 
 .hero .btn-get-started:hover {
