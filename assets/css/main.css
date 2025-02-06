@@ -732,6 +732,32 @@ section,
   flex: 1;
 }
 
+@media (max-width: 768px) {
+  .carousel-item img {
+      min-height: 10vh; /* Adjust for smaller screens */
+      width: 100%;
+  }
+
+  .carousel-container {
+      padding: 2px; /* Reduce padding for better visibility */
+      text-align: left; /* Center align text */
+  }
+
+  .carousel-container h2 {
+      font-size: 22px; /* Adjust text size for mobile readability */
+      line-height: 1.4;
+  }
+
+  .carousel-container p {
+      font-size: 16px;
+  }
+
+  .btn-get-started {
+      padding: 10px 20px;
+      font-size: 14px;
+  }
+}
+
 /* .heroimage {
   display: flex;
   justify-content: flex-end;
