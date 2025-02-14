@@ -703,15 +703,16 @@ section,
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
+  background-image: url("https://i.postimg.cc/hGH0ZN40/hero-77.jpg");
 }
 
-.hero .carousel-item:before {
+/* .hero .carousel-item:before {
   content: "";
   background: color-mix(in srgb, var(--background-color), transparent 60%);
   position: absolute;
   inset: 0;
   z-index: 2;
-}
+} */
 
 .hero .carousel-container {
   position: absolute;
@@ -734,12 +735,12 @@ section,
 
 @media (max-width: 768px) {
   .carousel-item img {
-      min-height: 10vh; /* Adjust for smaller screens */
+      min-height: 10vh; 
       width: 100%;
   }
 
   .carousel-container {
-      padding: 2px; /* Reduce padding for better visibility */
+      padding: 2px; 
       text-align: left; /* Center align text */
   }
 
