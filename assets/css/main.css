@@ -773,6 +773,12 @@ section,
   .hero .carousel-container {
     inset: 90px 50px;
   }
+  .hero .carousel-item {
+    background-size: cover;
+    background-position: right;
+    
+  
+  }  
 }
 
 .hero h2 {
