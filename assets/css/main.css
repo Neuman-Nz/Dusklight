@@ -674,6 +674,7 @@ section,
 --------------------------------------------------------------*/
 .hero {
   padding: 0;
+  /* height: 100vh; */
 }
 
 .hero .carousel {
@@ -697,13 +698,14 @@ section,
 }
 
 .hero .carousel-item {
-  position: absolute;
+  /* position: absolute; */
   inset: 0;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
   background-image: url("https://i.postimg.cc/hGH0ZN40/hero-77.jpg");
+  height: 100vh;
 }
 
 /* .hero .carousel-item:before {
@@ -767,18 +769,22 @@ section,
 .heroimage img {
   max-width: 100%;
   height: auto;
+
 }
 
 @media (max-width: 575px) {
   .hero .carousel-container {
     inset: 90px 50px;
   }
-  .hero .carousel-item {
-    background-size: cover;
-    background-position: right;
-    
+  /* .hero .carousel-item {
+    background-size: contain;
+    background-position: center;
+  }   */
+  .hero {
+    padding: 0;
+    height: 100vh;
+  }
   
-  }  
 }
 
 .hero h2 {
