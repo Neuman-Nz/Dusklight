@@ -812,7 +812,7 @@ body, html {
 @media (max-width: 576px) {
   .hero {
       height: 70vh;
-      background-size: contain;
+      /* background-size: contain; */
       justify-content: inherit;
       padding: 0.5rem;
       text-align: left;
