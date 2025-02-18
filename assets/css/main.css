@@ -1412,6 +1412,11 @@ body, html {
 /*--------------------------------------------------------------
 # Team Section
 --------------------------------------------------------------*/
+.teammem{
+  display: flex;
+  justify-content: center;
+
+}
 .team .team-member {
   background-color: var(--surface-color);
   overflow: hidden;
