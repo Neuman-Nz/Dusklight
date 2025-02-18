@@ -672,208 +672,179 @@ section,
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
-.hero {
-  padding: 0;
-  /* height: 100vh; */
+:root {
+  --primary-color: #460572;
+  --secondary-color: #6b17b5;
+  --text-color: #ffffff;
 }
 
-.hero .carousel {
-  width: 100%;
-  min-height: 100vh;
-  padding: 0;
+* {
   margin: 0;
-  background-color: var(--background-color);
-  position: relative;
-  overflow: hidden;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.hero img { 
-  /* position: absolute; */ 
-  /* inset: 0;  */
-  /* display: block; */
-  width: 100%;
+body, html {
+  height: 50%;
+  font-family: 'Poppins', sans-serif;
+}
+
+.hero {
   height: 100vh;
-  object-fit: var(--nav-dropdown-background-color);
-  /* z-index: 4; */
-}
-
-.hero .carousel-item {
-  /* position: absolute; */
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  overflow: hidden;
-  background-image: url("https://i.postimg.cc/hGH0ZN40/hero-77.jpg");
-  height: 100vh;
-}
-
-/* .hero .carousel-item:before {
-  content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 60%);
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-} */
-
-.hero .carousel-container {
-  position: absolute;
-  inset: 90px 100px;
-  /* display: flex; */
-  /* justify-content: center;
-  align-items: center; */
-  /* flex-direction: column; */
-  z-index: 3;
+  background: url('https://i.postimg.cc/rpy2cynz/brain.jpg') no-repeat center center/cover;
+  background-size: cover; 
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Ensures space between text and image */
-  flex-wrap: wrap;
-
+  padding: 2rem;
+  color: var(--text-color);
+  position: relative;
 }
 
-.hero .carousel-container div {
-  flex: 1;
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 1;
 }
 
-@media (max-width: 768px) {
-  .carousel-item img {
-      min-height: 10vh; 
-      width: 100%;
-  }
-
-  .carousel-container {
-      padding: 2px; 
-      text-align: left; /* Center align text */
-  }
-
-  .carousel-container h2 {
-      font-size: 22px; /* Adjust text size for mobile readability */
-      line-height: 1.4;
-  }
-
-  .carousel-container p {
-      font-size: 16px;
-  }
-
-  .btn-get-started {
-      padding: 10px 20px;
-      font-size: 14px;
-  }
+.hero-content {
+  max-width: 600px;
+  z-index: 2;
 }
 
-/* .heroimage {
-  display: flex;
-  justify-content: flex-end;
-} */
-
-.heroimage img {
-  max-width: 100%;
-  height: auto;
-
-}
-
-@media (max-width: 575px) {
-  .hero .carousel-container {
-    inset: 90px 50px;
-  }
-  /* .hero .carousel-item {
-    background-size: contain;
-    background-position: center;
-  }   */
-  .hero {
-    padding: 0;
-    height: 100vh;
-  }
-  
-}
-
-.hero h2 {
-  margin-bottom: 30px;
-  font-size: 56px;
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
   font-weight: 900;
 }
-
-.hero h2 span {
-  color: var(--accent-color);
+#hero-heading {
+  font-weight: 670;
+  font-size: 3rem; /* Adjust size as needed */
+  background: linear-gradient(to right, #d5d0d8, #79499e); /* Transformative purple colors */
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: fadeIn 2s ease-in-out, pulseGradient 3s infinite ease-in-out; /* Added pulseGradient animation */
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
 }
+
+/* Fade-in effect */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Pulse effect for the gradient */
+@keyframes pulseGradient {
+  0% {
+    background-size: 150% 150%;
+    background-position: -100% 0;
+  }
+  50% {
+    background-size: 200% 200%;
+    background-position: 100% 0;
+  }
+  100% {
+    background-size: 150% 150%;
+    background-position: -100% 0;
+  }
+}
+
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: var(--text-color);
+}
+
+.hero-content button {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Added transform transition for scaling */
+  animation: pulseButton 2s infinite ease-in-out; /* Pulsing animation */
+}
+
+/* Pulse effect for the button */
+@keyframes pulseButton {
+  0% {
+    background-color: var(--secondary-color);
+    transform: scale(1);
+  }
+  50% {
+    background-color: #9c27b0; /* Lighter purple (you can choose a different color) */
+    transform: scale(1.1); /* Slightly scales the button */
+  }
+  100% {
+    background-color: var(--secondary-color);
+    transform: scale(1);
+  }
+}
+
+/* Optional: Button hover effect */
+.hero-content button:hover {
+  background-color: #8e24aa; /* Darker purple on hover */
+}
+
+.hero-content button:hover {
+  background-color: #390866;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-100px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@media (max-width: 576px) {
+  .hero {
+      height: 55vh;
+      background-size: contain;
+      justify-content: inherit;
+      padding: 0.5rem;
+      text-align: left;
+  }
+
+  .hero-content {
+      max-width: 90%;
+  }
+
+  .hero-content h1 {
+      font-size: 2rem;
+  }
+
+  .hero-content p {
+      font-size: 1rem;
+  }
+}
+
 
 @media (max-width: 768px) {
-  .hero h2 {
-    font-size: 30px;
+  @media screen and (min-width: 768px) {
+    .hero {
+      background-image: url('https://i.postimg.cc/hGH0ZN40/hero-77.jpg'); /* High-res image */
+    }
   }
-}
-
-.hero .btn-get-started {
-  color: var(--contrast-color);
-  font-family: var(--heading-font);
-  font-weight: 600;
-  font-size: 18px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  display: inline-block;
-  padding: 10px 40px;
-  /* border-radius: 50px; */
-  transition: 0.5s;
-  margin: 10px 0;
-  align-self: flex-start;
-  flex-shrink: 0;
-  border: 2px solid var(--accent-color);
-  background-color: #9b42c7;
-}
-
-.hero .btn-get-started:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
-}
-
-.hero .carousel-control-prev,
-.hero .carousel-control-next {
-  width: 10%;
-  transition: 0.3s;
-  opacity: 0.5;
-  z-index: 3;
-}
-
-.hero .carousel-control-prev:focus,
-.hero .carousel-control-next:focus {
-  opacity: 0.5;
-}
-
-.hero .carousel-control-prev:hover,
-.hero .carousel-control-next:hover {
-  opacity: 0.9;
-}
-
-@media (min-width: 1024px) {
-
-  .hero .carousel-control-prev,
-  .hero .carousel-control-next {
-    width: 5%;
+  .hero-content h1 {
+      font-size: 2.5rem;
   }
-}
 
-.hero .carousel-control-next-icon,
-.hero .carousel-control-prev-icon {
-  background: none;
-  font-size: 32px;
-  line-height: 1;
-}
-
-.hero .carousel-indicators {
-  list-style: none;
-}
-
-.hero .carousel-indicators li {
-  cursor: pointer;
-  opacity: 1;
-  height: 6px;
-  width: 20px;
-  transition: 0.3s;
-  padding: 0;
-}
-
-.hero .carousel-indicators .active {
-  background-color: var(--accent-color);
-  width: 40px;
+  .hero-content p {
+      font-size: 1.1rem;
+  }
 }
 
 /*--------------------------------------------------------------
