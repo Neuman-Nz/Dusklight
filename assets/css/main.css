@@ -761,6 +761,25 @@ body, html {
   margin-bottom: 2rem;
   color: var(--text-color);
 }
+.intro-text {
+  font-family: 'Arial', sans-serif;
+  font-size: 1.2rem; /* Adjusts the size to make it more readable */
+  line-height: 1.8; /* Adds spacing between lines for clarity */
+  color: #333; /* Dark grey for a modern and readable look */
+  max-width: 800px; /* Limits the width for better readability */
+  margin: 0 auto; /* Centers the paragraph */
+  text-align: left; /* Centers the text */
+  background: linear-gradient(45deg, #6a1b9a, #8e24aa); /* Adds a gradient background */
+  color: transparent; /* Makes text color transparent to show the gradient */
+  -webkit-background-clip: text; /* Clips the gradient to the text */
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out; /* Smooth animation for text scaling */
+}
+
+.intro-text:hover {
+  transform: scale(1.05); /* Slightly scales up the text on hover */
+  color: #fff; /* Changes text color to white when hovered */
+}
+
 
 .hero-content button {
   padding: 1rem 2rem;
@@ -886,7 +905,7 @@ body, html {
 
 @media (max-width: 640px) {
   .clients .client-logo img {
-    padding: 20px;
+    padding: 18px;
   }
 }
 
