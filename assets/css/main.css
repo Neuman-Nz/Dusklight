@@ -905,7 +905,7 @@ body, html {
 
 @media (max-width: 640px) {
   .clients .client-logo img {
-    padding: 23px;
+    padding: 25px;
   }
 }
 
