@@ -1,29 +1,44 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+// Include PHPMailer classes
+require 'PHPMailer/Exception.php';
+require 'PHPMailer/PHPMailer.php';
+require 'PHPMailer/SMTP.php';
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // Collect and sanitize form inputs
     $name = htmlspecialchars(trim($_POST['name']));
     $email = htmlspecialchars(trim($_POST['email']));
     $subject = htmlspecialchars(trim($_POST['subject']));
     $message = htmlspecialchars(trim($_POST['message']));
 
-    // Email configuration
-    $to = "owiroadams@gmail.com"; // Your email address
-    $headers = "From: $email\r\n";
-    $headers .= "Reply-To: $email\r\n";
-    $headers .= "Content-Type: text/plain; charset=UTF-8";
+    // SMTP Configuration
+    $mail = new PHPMailer(true);
 
-    // Email body
-    $body = "You have received a new message from your website contact form.\n\n" .
-            "Name: $name\n" .
-            "Email: $email\n\n" .
-            "Subject: $subject\n\n" .
-            "Message:\n$message";
+    try {
+        $mail->isSMTP();
+        $mail->Host = 'smtp.truehost.cloud'; // Truehost SMTP server
+        $mail->SMTPAuth = true;
+        $mail->Username = 'owiroadams@gmail.com'; // Your Truehost email
+        $mail->Password = 'Neuman87$'; // Your email password
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port = 587;
 
-    // Send email
-    if (mail($to, $subject, $body, $headers)) {
-        echo "success"; // You can use this response to show a success message
-    } else {
-        echo "error"; // Handle error scenarios appropriately
+        // Email Headers
+        $mail->setFrom($email, $name);
+        $mail->addAddress('owiroadams@gmail.com'); // Your receiving email
+        $mail->Subject = $subject;
+        $mail->Body = "Name: $name\nEmail: $email\n\nMessage:\n$message";
+
+        // Send Email
+        if ($mail->send()) {
+            echo "success";
+        } else {
+            echo "error: " . $mail->ErrorInfo;
+        }
+    } catch (Exception $e) {
+        echo "error: " . $mail->ErrorInfo;
     }
 } else {
     echo "Invalid request method.";
